@@ -1,6 +1,133 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@plugin "tailwindcss-animate";
+
+@theme inline {
+  --font-mono: "JetBrains Mono", "Roboto Mono", monospace;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+:root {
+  --background: #F5F5F5;
+  --foreground: #000000;
+  
+  --card: #FFFFFF;
+  --card-foreground: #000000;
+  
+  --popover: #FFFFFF;
+  --popover-foreground: #000000;
+  
+  --primary: #000000;
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #E0E0E0;
+  --secondary-foreground: #000000;
+  
+  --muted: #F0F0F0;
+  --muted-foreground: #666666;
+  
+  --accent: #FFCC00;
+  --accent-foreground: #000000;
+  
+  --destructive: #FF3B30;
+  --destructive-foreground: #FFFFFF;
+  
+  --border: #000000;
+  --input: #000000;
+  --ring: #000000;
+  
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #121212;
+  --foreground: #FFFFFF;
+  
+  --card: #1E1E1E;
+  --card-foreground: #FFFFFF;
+  
+  --popover: #1E1E1E;
+  --popover-foreground: #FFFFFF;
+  
+  --primary: #FFFFFF;
+  --primary-foreground: #000000;
+  
+  --secondary: #333333;
+  --secondary-foreground: #FFFFFF;
+  
+  --muted: #2C2C2C;
+  --muted-foreground: #AAAAAA;
+  
+  --accent: #FFCC00;
+  --accent-foreground: #000000;
+  
+  --destructive: #FF453A;
+  --destructive-foreground: #FFFFFF;
+  
+  --border: #FFFFFF;
+  --input: #FFFFFF;
+  --ring: #FFFFFF;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  /* Neo-Brutalism Utilities */
+  .neo-card {
+    @apply bg-card border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all;
+  }
+  .neo-card:active {
+    @apply translate-x-[2px] translate-y-[2px] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)];
+  }
+  
+  .neo-button {
+    @apply bg-primary text-primary-foreground font-bold py-2 px-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)];
+  }
+  
+  .neo-input {
+    @apply border-2 border-black p-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:outline-none transition-all;
+  }
+}
+@import "tw-animate-css";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
