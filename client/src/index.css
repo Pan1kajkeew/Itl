@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@plugin "tailwindcss-animate";
-
 @theme inline {
   --font-mono: "JetBrains Mono", "Roboto Mono", monospace;
   --font-sans: "Inter", system-ui, sans-serif;
